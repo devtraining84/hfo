@@ -1,0 +1,27 @@
+  <div >
+        <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji,
+            z którymi współpracujemy. Możesz sprawdzić czym się zajmują,
+            komu pomagają i czego potrzebują.</p>
+
+        <ul >
+            {% for item in org %}
+          <li>
+            <div class="org">
+              <div  >{{ item.name }}</div>
+              <div >{{ item.description }}</div>
+            </div>
+
+
+           <div >{% for art in item.categories.all %}
+                {{ art.name }}
+                {% endfor %}
+              </div>
+          </li>
+{% endfor %}
+        </ul>
+
+
+
+      </div>
+
+
